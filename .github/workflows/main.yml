@@ -1,0 +1,35 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Build and deploy to GitHub Pages
+    - uses: actions/checkout@v1
+    with:
+      # The GitHub installation token.
+      github_token: 
+      # The token used for triggering a deploy request.
+      gh_pages_token: 
+      # The branch to deploy the Jekyll site to.
+      gh_pages_branch: # optional, default is gh-pages
+      # The folder to build the Jekyll site to.
+      gh_pages_dist_folder: # optional, default is _site
+      # The commit message to use when deploying the Jekyll site.
+      gh_pages_commit_message: # optional
+      # The repository to deploy the Jekyll site to.
+      remote_repo: # optional
+      # The username to use for the committer of the commit.
+      committer_username: # optional
+      # The email to use for the committer of the commit.
+      committer_email: # optional
+      # Whether to use the --force flag on git push.
+      git_force: # optional, default is true
+      # Whether to override the gh-pages branch.
+      override_gh_pages_branch: # optional, default is false
+      # Whether to add the .nojekyll file to the deployed site.
+      gh_pages_add_no_jekyll: # optional, default is true
